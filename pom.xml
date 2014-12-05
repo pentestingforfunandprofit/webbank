@@ -17,6 +17,11 @@
             <id>springbyexample</id>
             <url>http://www.springbyexample.org/maven/repo/</url>
         </repository>
+        <repository>
+            <id>repository.jboss.org</id>
+            <name>JBoss Public Repository</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
     </repositories>
     
     <properties>
@@ -152,7 +157,7 @@
             <artifactId>tiles-jsp</artifactId>
             <version>2.2.2</version>
         </dependency>
-
+        <!--
         <dependency>
             <groupId>org.jboss.seam</groupId>
             <artifactId>bom</artifactId>
@@ -160,7 +165,7 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-
+        -->
         <dependency>
             <groupId>org.jboss.seam</groupId>
             <artifactId>jboss-seam</artifactId>
