@@ -16,4 +16,4 @@ mvn jetty:run
 ```sh
 rhc app create jpen jbossews-2.0 --from-code https://github.com/pentestingforfunandprofit/webbank.git
 ```
-If you are new you to OpenShift, refer to the [Getting Started Overview](https://developers.openshift.com/en/getting-started-overview.html).
+If you are new to OpenShift, refer to the [Getting Started Overview](https://developers.openshift.com/en/getting-started-overview.html).
