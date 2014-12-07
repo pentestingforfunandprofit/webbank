@@ -4,7 +4,7 @@
 
 <h1><fmt:message key="index.title"/></h1>
 
-<p><fmt:message key="index.message"/>sdasdf</p>
+<p><fmt:message key="index.message"/></p>
 
 <h2>Latest news</h2>
 <ul>
