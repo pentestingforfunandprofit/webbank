@@ -11,7 +11,7 @@
 	<description>
         Tusk Mutual Web Bank
 	</description>
-	
+
     <repositories>
         <repository>
             <id>springbyexample</id>
@@ -23,7 +23,7 @@
             <url>http://repository.jboss.org/nexus/content/groups/public</url>
         </repository>
     </repositories>
-    
+
     <properties>
         <spring.framework.version>4.0.2.RELEASE</spring.framework.version>
         <hibernate.version>4.3.4.Final</hibernate.version>
@@ -60,7 +60,7 @@
                <groupId>org.hibernate</groupId>
                <artifactId>hibernate-validator-cdi</artifactId>
                <version>5.1.2.Final</version>
-            </dependency>        
+            </dependency>
             <dependency>
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
@@ -115,7 +115,7 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring.framework.version}</version>
-            </dependency>   
+            </dependency>
             <dependency>
                 <groupId>org.hibernate.javax.persistence</groupId>
                 <artifactId>hibernate-jpa-2.1-api</artifactId>
@@ -151,7 +151,7 @@
             <artifactId>sbe-dynamic-tiles2</artifactId>
             <version>1.2.3</version>
         </dependency>
-        
+
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
             <artifactId>tiles-jsp</artifactId>
@@ -188,8 +188,15 @@
                 <artifactId>standard</artifactId>
                 <version>1.1.2</version>
                <scope>runtime</scope>
-            </dependency>    
-	</dependencies>
+            </dependency>
+
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>1.4.6</version>
+            </dependency>
+
+    </dependencies>
 
 	<build>
         <finalName>webbank</finalName>
@@ -220,6 +227,42 @@
                             <outputDirectory>webapps</outputDirectory>
                             <warName>ROOT</warName>
                         </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+        <!-- Compilation of the JSP with Jetty 9.3.6 -->
+        <profile>
+            <id>jetty936Jsp</id>
+
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.eclipse.jetty</groupId>
+                        <artifactId>jetty-jspc-maven-plugin</artifactId>
+                        <version>9.3.6.v20151106</version>
+                        <executions>
+                            <execution>
+                                <id>jspc</id>
+                                <goals>
+                                    <goal>jspc</goal>
+                                </goals>
+                                <configuration>
+                                    <jspc>
+                                        <smapSuppressed>false</smapSuppressed>
+                                        <smapDumped>true</smapDumped>
+                                    </jspc>
+                                    <keepSources>true</keepSources>
+                                    <useProvidedScope>true</useProvidedScope>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

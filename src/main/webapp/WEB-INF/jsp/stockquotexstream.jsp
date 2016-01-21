@@ -1,14 +1,15 @@
-<%
 
-import com.thoughtworks.xstream.XStream;
+<%@ page import="com.thoughtworks.xstream.XStream" %>
+<%!
 
-class Date {
+public static class Date {
     int year = 2004;
     int month = 8;
     int day = 15;
 }
-
-public class Deserialize {
+%>
+<%!
+public static class Deserialize {
 
     public static void main(String[] args) {
 
